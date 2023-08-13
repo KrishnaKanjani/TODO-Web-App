@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TODO App</title>
+        <link rel="stylesheet" href="../static/styles.css">
+
+        <script>
+            function update_task(todo_id){
+                var task_name = prompt('Enter the updated task'); 
+                console.log(task_name)
+                if (task_name !== null && task_name.trim() !== '') {
+                    window.location.href = '/update/' + todo_id + '?task_name='+task_name;
+                }
+                return window.location.href
+            }
+
+            function onCheckboxChange(todo_id){
+                var checkbox = document.getElementById('checkbox_' + todo_id);
+                if (checkbox.checked) {
+                    window.location.href = '/checked/' + todo_id + '?done=true';
+                } else {
+                    window.location.href = '/checked/' + todo_id + '?done=false';
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <div class="logout">
+            <form action="/logout" method="post">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <div class="header">TODO App  - Welcome, {{ username }}!</div>
+
+            <div class="add-todo">
+                <form action="/add" method="post">
+                    <input type="text" name="newTodo" placeholder="Add a new todo">
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+
+            <ul class="todo-list">
+                {% for todo in todos %}
+                <li class="todo-item {% if todo.done %}done{% endif %}">
+                    <input type="checkbox" name='done' {% if todo.done %}checked{% endif %} id="checkbox_{{ todo.id }}" onchange="onCheckboxChange('{{ todo.id }}')">
+                    <label>{{ todo['task'] }}</label>
+                    <button id="{{todo.id}}"  onclick="update_task('{{todo.id}}' )" class="update_btn">Update</button>
+                    <button><a href="{{ url_for('delete', todo_id=todo.id)}}" onclick="return confirm('Are you sure you want to delete this todo?')">Delete</a></button>
+                </li>
+                {% endfor %}
+            </ul>
+            
+        </div>
+    </body>
+</html>
+

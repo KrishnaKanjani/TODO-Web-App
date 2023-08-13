@@ -1,0 +1,161 @@
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif;
+    background-color: #034c7d;
+    margin: 0;
+    padding: 0;
+}
+/* ---------------- REGISTER PAGE & LOGIN PAGE------------------ */
+.r-container, .l-container {
+    max-width: 600px;
+    margin: 200px auto;
+    padding: 30px;
+    background-color: #abffeb;
+    box-shadow: 15px 30px 55px  rgba(5, 37, 0, 0.879);
+    border-radius: 15px;
+}
+.register input, .login input {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    width: 400px;
+    margin-left: 100px;
+    margin-bottom: 5px;
+}
+.register button, .login button{
+    margin: 20px 200px 10px 250px;
+    font-size: 17px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #03c72d;
+    cursor: pointer;
+}
+.register p, .login p{
+    text-align: center;
+    font-size: 18px;
+}
+#flash{
+   text-align: center;
+   margin-bottom: 20px;
+
+}
+
+/* ---------------------- TODO PAGE ---------------------- */
+
+/* LOGOUT BUTTON */
+.logout{
+    padding: 10px;
+    margin-left: 94%;
+    margin-top: -15px;
+    position: fixed
+}
+.logout button{
+    padding: 10px;
+    font-size: medium;
+    border-radius: 5px;
+    background-color: #c7e1fa;
+    border: none;
+    cursor: pointer;
+}
+.logout button:hover{
+    background-color: #0a0136;
+    color: white;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #a6d5fe;
+    box-shadow: 15px 30px 55px  rgba(0, 3, 50, 0.719);
+    border-radius: 10px;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+/* ADD FORM */
+.add-todo {
+    display: flex;
+    margin-top: 20px;
+}
+.add-todo input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    width: 500px;
+}
+
+/* ADD BUTTON */
+.add-todo button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #209024;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.add-todo button:hover {
+    background-color: #4eb353;
+}
+
+/* ADDED TODO LIST  */
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+.todo-item {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 12px rgba(0, 5, 72, 0.655);
+    border-radius: 10px;
+}
+.todo-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+.todo-item label {
+    flex: 1;
+    font-size: 18px;
+    padding-top: 8px;
+}
+.todo-item input[type="checkbox"]:checked + label{
+    text-decoration: line-through;
+}
+
+/* /DELETE BUTTON */
+.todo-item>button{
+    text-decoration: none;
+    padding: 10px 12px;
+    font-size: 15px;
+    background-color: #ff3d17;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.todo-item>button>a{
+    text-decoration: none;
+    color: white;
+}
+.todo-item>button:hover{
+    background-color: #da0000;
+}
+
+/* UPDATE BUTTON */
+.update_btn{
+    background-color: #d3a21c !important;
+    margin-right: 8px;
+    cursor: pointer;
+}
+.update_btn:hover{
+    background-color: #ffc830 !important;
+}

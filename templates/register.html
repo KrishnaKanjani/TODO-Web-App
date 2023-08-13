@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - TODO App</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="r-container">
+        <div class="header">TODO App - Register</div>
+        {%- for message in get_flashed_messages() %}
+            <div id="flash" style="color: red;">
+                {{ message }}
+            </div>
+        {%- endfor %}
+        <div class="register">
+            <form action="/register" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="c_password" placeholder="Confirm Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="/login">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>
